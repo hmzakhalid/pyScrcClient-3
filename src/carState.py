@@ -1,16 +1,9 @@
-'''
-Created on Apr 5, 2012
-
-@author: lanquarden
-'''
 import msgParser
 
 class CarState(object):
     '''
     Class that hold all the car state variables
     '''
-
-
     def __init__(self):
         '''Constructor'''
         self.parser = msgParser.MsgParser()

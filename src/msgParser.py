@@ -1,9 +1,3 @@
-'''
-Created on Apr 5, 2012
-
-@author: lanquarden
-'''
-
 class MsgParser(object):
     '''
     A parser for received UDP messages and building UDP messages
@@ -23,7 +17,7 @@ class MsgParser(object):
                 substr = str_sensors[b_open + 1: b_close]
                 items = substr.split()
                 if len(items) < 2:
-                    print "Problem parsing substring: ", substr
+                    print("Problem parsing substring: ", substr)
                 else:
                     value = []
                     for i in range(1,len(items)):
@@ -31,7 +25,7 @@ class MsgParser(object):
                     sensors[items[0]] = value
                 b_open = str_sensors.find('(', b_close)
             else:
-                print "Problem parsing sensor string: ", str_sensors
+                print("Problem parsing sensor string: ", str_sensors)
                 return None
         
         return sensors
@@ -40,7 +34,7 @@ class MsgParser(object):
         '''Build an UDP message from a dictionary'''
         msg = ''
         
-        for key, value in dictionary.items():
+        for key, value in list(dictionary.items()):
             if value != None and value[0] != None:
                 msg += '(' + key
                 for val in value:

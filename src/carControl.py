@@ -1,8 +1,3 @@
-'''
-Created on Apr 5, 2012
-
-@author: lanquarden
-'''
 import msgParser
 
 class CarControl(object):
